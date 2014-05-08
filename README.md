@@ -1,4 +1,4 @@
-Author: Sam Camus (xdothackerx)
+<h4>Author: Sam Camus (xdothackerx)</h4>
 
 This app will help put together my portfolio site/blog. Work in progress!
 
