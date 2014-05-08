@@ -2,7 +2,9 @@ Author: Sam Camus (xdothackerx)
 
 This app will help put together my portfolio site/blog. Work in progress!
 
-PREVIEW SCREENSHOTS
+
+
+<h1>PREVIEW SCREENSHOTS</hi>
 
 Current front page:
 
