@@ -4,7 +4,7 @@ This app will help put together my portfolio site/blog. Work in progress!
 
 
 
-<h1>PREVIEW SCREENSHOTS</hi>
+<h5>PREVIEW SCREENSHOTS</h5>
 
 Current front page:
 
