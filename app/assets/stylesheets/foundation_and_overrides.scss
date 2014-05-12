@@ -36,11 +36,19 @@
 // $row-width: rem-calc(1000);
 // $total-columns: 12;
 
+// We use these as default colors throughout
+ $primary-color: #27A295;
+ $secondary-color: #4D3421;
+// $alert-color: #f04124;
+// $success-color: #43AC6A;
+// $warning-color: #f08a24;
+// $info-color: #a0d3e8;
+
 // Global
 
 // We use these to control various global styles
-// $body-bg: #fff;
-// $body-font-color: #222;
+ $body-bg: #E6C8AE;
+ $body-font-color: #19558A;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -52,14 +60,6 @@
 // $text-direction: ltr;
 // $opposite-direction: right;
 // $default-float: left;
-
-// We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -121,10 +121,10 @@
 // $header-font-family: $body-font-family;
 // $header-font-weight: normal;
 // $header-font-style: normal;
-// $header-font-color: #222;
+ $header-font-color: #062A4A;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
-// $header-bottom-margin: .5rem;
+ $header-bottom-margin: .5rem;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
@@ -168,10 +168,10 @@
 // $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 // We use these to style the <hr> element
-// $hr-border-width: 1px;
+ $hr-border-width: 2px;
 // $hr-border-style: solid;
-// $hr-border-color: #ddd;
-// $hr-margin: rem-calc(20);
+ $hr-border-color: #C9B099;
+ $hr-margin: rem-calc(20);
 
 // We use these to style lists
 // $list-style-position: outside;
@@ -292,7 +292,7 @@
 // $include-html-nav-classes: $include-html-classes;
 
 // We use this to set the background color for the breadcrumb container.
-// $crumb-bg: scale-color($secondary-color, $lightness: 55%);
+ $crumb-bg: scale-color($secondary-color, $lightness: 55%);
 
 // We use these to set the padding around the breadcrumbs.
 // $crumb-padding: rem-calc(9 14 9);
@@ -1168,16 +1168,16 @@
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
-// $topbar-bg: $topbar-bg-color;
+ $topbar-bg-color: $primary-color;
+ $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
-// $topbar-margin-bottom: 0;
+  $topbar-height: 75px;
+  $topbar-margin-bottom: 0px;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: normal;
-// $topbar-title-font-size: rem-calc(17);
+ $topbar-title-font-size: 2rem;
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
@@ -1189,15 +1189,15 @@
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
+  $topbar-link-color: rgba(255, 255, 255, 0.51);
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
-// $topbar-link-font-size: rem-calc(13);
+  $topbar-link-font-size: 3rem;
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-hover: #272727;
+ $topbar-link-bg: $secondary-color;
+ $topbar-link-bg-hover: scale-color($secondary-color, $lightness: -14%);
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
@@ -1229,8 +1229,8 @@
 // $topbar-media-query: $medium-up;
 
 // Divider Styles
-// $topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
-// $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
+ $topbar-divider-border-bottom: solid 1px  scale-color($secondary-color, $lightness: 25%);
+// $topbar-divider-border-top: solid 1px scale-color($secondary-color, $lightness: -50%);
 
 // Sticky Class
 // $topbar-sticky-class: ".sticky";

@@ -12,24 +12,25 @@
   </head>
 
   <body>
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><%= link_to "Samantha Camus", root_path %></a></h1>
-        </li>
-      </ul>
-      <section class="top-bar-section">
-        <ul class="right">
-          <li class="divider"></li>
-          <li>Code</li>
-          <li class="divider"></li>
-          <li>Art</li>
-          <li class="divider"></li>
-          <li><%= link_to "Blog", posts_path %></a></li>
+    <div class="fixed">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><%= link_to image_tag('http://andrewbath.com/wp-content/uploads/2012/09/no_5_design.png'), root_path %></a></h1>
+          </li>
         </ul>
-      </div>
-    </nav>
-
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class="divider"></li>
+            <li><%= link_to "Code", posts_path %></a></li>
+            <li class="divider"></li>
+            <li><%= link_to "Art", posts_path %></a></li>
+            <li class="divider"></li>
+            <li><%= link_to "Blog", posts_path %></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
