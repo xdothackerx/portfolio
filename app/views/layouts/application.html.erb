@@ -16,7 +16,7 @@
       <nav class="top-bar" data-topbar>
         <ul class="title-area">
           <li class="name">
-            <h1><%= link_to image_tag('http://andrewbath.com/wp-content/uploads/2012/09/no_5_design.png'), root_path %></a></h1>
+            <!-- <h1><%= link_to image_tag('http://andrewbath.com/wp-content/uploads/2012/09/no_5_design.png'), root_path %></a></h1> -->
           </li>
         </ul>
         <section class="top-bar-section">
@@ -31,6 +31,15 @@
         </div>
       </nav>
     </div>
+
+    <!-- Flash Notice -->
+    <% if flash[:notice] %>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>

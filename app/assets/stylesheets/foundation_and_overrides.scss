@@ -1172,7 +1172,7 @@
  $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-  $topbar-height: 75px;
+  $topbar-height: 50px;
   $topbar-margin-bottom: 0px;
 
 // Controlling the styles for the title in the top bar
@@ -1194,7 +1194,7 @@
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
-  $topbar-link-font-size: 3rem;
+//  $topbar-link-font-size: 3rem;
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
  $topbar-link-bg: $secondary-color;
  $topbar-link-bg-hover: scale-color($secondary-color, $lightness: -14%);
@@ -1202,7 +1202,7 @@
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
-// $topbar-link-padding: $topbar-height / 3;
+ $topbar-link-padding: $topbar-height;
 
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;
