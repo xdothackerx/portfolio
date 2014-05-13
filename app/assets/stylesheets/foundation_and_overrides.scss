@@ -39,10 +39,10 @@
 // We use these as default colors throughout
  $primary-color: #27A295;
  $secondary-color: #4D3421;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
+ $alert-color: #F09384;
+ $success-color: #43AC6A;
+ $warning-color: #f08a24;
+ $info-color: #a0d3e8;
 
 // Global
 
@@ -254,7 +254,7 @@
 // We use these to control border styles.
 // $alert-border-style: solid;
 // $alert-border-width: 1px;
-// $alert-border-color: scale-color($primary-color, $lightness: $alert-function-factor);
+// $alert-border-color: $alert-color;
 // $alert-bottom-margin: rem-calc(20);
 
 // We use these to style the close buttons
@@ -1177,7 +1177,7 @@
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: normal;
- $topbar-title-font-size: 2rem;
+// $topbar-title-font-size: 5rem;
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
@@ -1194,7 +1194,7 @@
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
-//  $topbar-link-font-size: 3rem;
+ $topbar-link-font-size: 5rem;
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
  $topbar-link-bg: $secondary-color;
  $topbar-link-bg-hover: scale-color($secondary-color, $lightness: -14%);

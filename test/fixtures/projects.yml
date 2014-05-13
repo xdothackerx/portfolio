@@ -1,0 +1,9 @@
+portfolio:
+  title: Portfolio
+  tech: Ruby, Rails, Zurb
+  description: Personal portfolio site. (This one!)
+
+cards:
+  title: Cards
+  tech: Ruby
+  description: OO modeling practice with a deck of cards.
