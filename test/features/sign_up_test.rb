@@ -5,11 +5,7 @@ feature "As the site owner, I want to restrict who can access the site so that m
     # Given a visit to the main page
     visit root_path
     # When the user clicks on the sign up button and enters their information
-    click_on "Register"
-    fill_in "Email", with: users(:Beta).email
-    fill_in "Password", with: users(:Beta).encrypted_password
-    fill_in "Password confirmation", with: users(:Beta).encrypted_password
-    click_on "Sign up"
+    sign_in
     # Then a new user account is created
     page.must_have_content "Welcome! You have signed up successfully."
     page.wont_have_content "There was a problem with your sign up."
