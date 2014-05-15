@@ -9,6 +9,7 @@ gem 'turbolinks' # Turbolinks makes following links in your web application fast
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 gem 'foundation-rails'
 gem 'minitest-rails'
+gem 'devise'
 
 group :production do
   gem 'rails_12factor'

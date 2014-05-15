@@ -1,2 +1,11 @@
 $include-html-classes: false
 @import 'foundation_and_overrides'
+@import "foundation/variables";
+@import "foundation/components/global";
+@import "foundation/components/alert-boxes";
+
+.warningbox {
+  @include alert-base;
+  @include alert-style($success-color);
+  @include radius($radius);
+}

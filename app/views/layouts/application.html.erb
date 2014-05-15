@@ -16,21 +16,46 @@
       <nav class="top-bar" data-topbar>
         <ul class="title-area">
           <li class="name">
-            <h1><%= link_to image_tag('http://andrewbath.com/wp-content/uploads/2012/09/no_5_design.png'), root_path %></a></h1>
+            <%= link_to image_tag('http://www.adobe.com/content/dam/Adobe/images/shared/product_mnemonics/48x48/kuler-48x48.png'), root_path %></a>
           </li>
         </ul>
         <section class="top-bar-section">
           <ul class="right">
             <li class="divider"></li>
-            <li><%= link_to "Code", posts_path %></a></li>
+            <li><%= link_to "Code", projects_path %></a></li>
             <li class="divider"></li>
-            <li><%= link_to "Art", posts_path %></a></li>
+            <li><%= link_to "Art", projects_path %></a></li>
             <li class="divider"></li>
             <li><%= link_to "Blog", posts_path %></a></li>
           </ul>
+          <div id="user_nav">
+            <ul class="right">
+              <% if current_user %>
+                <li class="has-form">
+                  <a href=<%= destroy_user_session_path %> class="button [bit radius]">Log Out</a>
+                </li>
+              <% else %>
+                <li class="has-form">
+                  <a href=<%= new_user_session_path %> class="button [big radius]">Log In</a>
+                </li>
+                <li class="has-form">
+                  <a href=<%= new_user_registration_path %> class="button [big radius]">Register</a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </nav>
     </div>
+  </br>
+    <!-- Flash Notice -->
+    <% if flash[:notice] %>
+      <div class="alert-box radius">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>

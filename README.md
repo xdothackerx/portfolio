@@ -7,7 +7,16 @@ This app will help put together my portfolio site/blog. Work in progress!
 <h5>PREVIEW SCREENSHOTS</h5>
 
 Current front page:
-![HomePage](https://raw.github.com/xdothackerx/sea-b14-rails/portfolio/portfolio2/public/img/frontpage.png)
+![HomePage](https://raw.githubusercontent.com/xdothackerx/portfolio/Day7/public/img/frontpage.png)
 
-Current index:
-![Index](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/index.png)
+Current registration page:
+![Registration](https://raw.githubusercontent.com/xdothackerx/portfolio/Day7/public/img/signup.png)
+
+Current login page:
+![Login](https://raw.githubusercontent.com/xdothackerx/portfolio/Day7/public/img/login.png)
+
+Current blog post index:
+![Index](https://raw.githubusercontent.com/xdothackerx/portfolio/Day7/public/img/blog_index.png)
+
+Curent blog post display:
+![Posts](https://raw.githubusercontent.com/xdothackerx/portfolio/Day7/public/img/blog_post.png)
