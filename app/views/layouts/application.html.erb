@@ -28,6 +28,22 @@
             <li class="divider"></li>
             <li><%= link_to "Blog", posts_path %></a></li>
           </ul>
+          <div id="user_nav">
+            <ul class="right">
+              <% if current_user %>
+                <li class="has-form">
+                  <a href=<%= destroy_user_session_path %> class="button [bit radius]">Log Out</a>
+                </li>
+              <% else %>
+                <li class="has-form">
+                  <a href=<%= new_user_session_path %> class="button [big radius]">Log In</a>
+                </li>
+                <li class="has-form">
+                  <a href=<%= new_user_registration_path %> class="button [big radius]">Register</a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </nav>
     </div>

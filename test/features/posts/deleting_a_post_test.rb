@@ -3,6 +3,7 @@ require "test_helper"
 feature "DeletingAPost" do
   scenario "deleting an existing post" do
     # Given the post author visiting the index page
+    sign_in
     title = posts(:cr).title
     visit posts_path
     # When "Delete" is clicked
