@@ -13,6 +13,6 @@ feature "CreatingAPost" do
     page.text.must_include "Post was successfully created"
     page.text.must_include "how I learned to make Rails apps"
     page.has_css? "#author"
-    page.text.must_include users(:Beta).email
+    page.text.must_include users(:Editor).email
   end
 end

@@ -22,24 +22,24 @@
         <section class="top-bar-section">
           <ul class="right">
             <li class="divider"></li>
-            <li><%= link_to "Code", projects_path %></a></li>
+            <li id="projects"><%= link_to "Code", projects_path %></a></li>
             <li class="divider"></li>
-            <li><%= link_to "Art", projects_path %></a></li>
+            <li id="art"><%= link_to "Art", projects_path %></a></li>
             <li class="divider"></li>
-            <li><%= link_to "Blog", posts_path %></a></li>
+            <li id="blog"><%= link_to "Blog", posts_path %></a></li>
           </ul>
           <div id="user_nav">
             <ul class="right">
               <% if current_user %>
                 <li class="has-form">
-                  <a href=<%= destroy_user_session_path %> class="button [bit radius]">Log Out</a>
+                  <a href=<%= destroy_user_session_path %> class="button [bit radius]" id="logout">Log Out</a>
                 </li>
               <% else %>
                 <li class="has-form">
-                  <a href=<%= new_user_session_path %> class="button [big radius]">Log In</a>
+                  <a href=<%= new_user_session_path %> class="button [big radius]" id="login">Log In</a>
                 </li>
                 <li class="has-form">
-                  <a href=<%= new_user_registration_path %> class="button [big radius]">Register</a>
+                  <a href=<%= new_user_registration_path %> class="button [big radius]" id="register">Register</a>
                 </li>
               <% end %>
             </ul>
