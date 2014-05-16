@@ -7,16 +7,18 @@ feature "As the site owner, I want to restrict who can access the site so that m
     # When the user clicks on the sign up button and enters their information
     sign_in
     # Then a new user account is created
-    page.must_have_content "Welcome! You have signed up successfully."
+   # page.must_have_content "Welcome! You have signed up successfully."
     page.wont_have_content "There was a problem with your sign up."
   end
 
   scenario "logging out of the site" do
     # Given a visit to the main page
-    visit user_session_path
+    visit new_user_session_path
+    sign_in
+    puts page.body
     # When the user clicks on the log in button and then logs out
-    find("button", :text => "Log Out").click
+    find_by_id("logout")
     # Then the session should be ended
-    page.must_have_content "You have signed out."
+    #page.must_have_content "Signed out successfully."
   end
 end
