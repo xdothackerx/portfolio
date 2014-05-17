@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="row">
   <div class="panel radius">
     <h3>
@@ -16,8 +14,6 @@
         <%= @post.author.email %>
       </small>
     </h4>
-
-    <% if @post.published?
 
     <%= link_to 'Edit', edit_post_path(@post) %> |
     <%= link_to 'Back', posts_path %>
