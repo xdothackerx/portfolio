@@ -23,11 +23,11 @@ class PostPolicy < ApplicationPolicy
   end
 
   def edit?
-    @user.editor? || @user.owner_of?(@post)
+    @user.editor? || @user == @post.author
   end
 
   def destroy?
-    @user.editor? || @user.owner_of?(@post)
+    @user.editor? || @user == @post.author
   end
 
   def permitted_attributes

@@ -15,6 +15,17 @@
       </small>
     </h4>
 
+    <h4 id="status">
+      <small>
+        <b>Status:</b>
+          <% if @post.published? %>
+            Published
+          <% else %>
+            Not Published
+          <% end %>
+      </small>
+    </h4>
+
     <%= link_to 'Edit', edit_post_path(@post) %> |
     <%= link_to 'Back', posts_path %>
   </div>

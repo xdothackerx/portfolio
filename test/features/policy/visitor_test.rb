@@ -2,8 +2,8 @@ require 'test_helper'
 
 feature "Visitor" do
   scenario "As a site visitor I want to view (read) posts so I can enjoy quality content" do
-    visit root_path
-    click_on "Blog"
+    visit posts_path
+    save_and_open_page
     page.must_have_content "Blog Posts"
     title = posts(:cr).title
     page.find('tr', :text => title).click_on "Show"

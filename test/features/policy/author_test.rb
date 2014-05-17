@@ -5,7 +5,7 @@ feature "Authorship" do
     sign_in(:Author)
     click_on "Blog"
     click_on "New Post"
-    page.wont_have_field("post_published")
+    page.wont_have_field("published")
   end
 
 # scenario "As an author I want to be able to update posts so that I can fix typos."
