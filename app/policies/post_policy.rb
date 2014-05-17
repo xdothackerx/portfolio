@@ -1,7 +1,7 @@
 class PostPolicy < ApplicationPolicy
   class Scope
     def resolve
-      if user.editor?
+      if @user.editor?
         scope.all
       else
         scope.where(:published => true)
@@ -15,23 +15,23 @@ class PostPolicy < ApplicationPolicy
   end
 
   def create?
-    user.editor? or user.author?
+    @user.editor? or @user.author?
   end
 
   def publish?
-    user.editor?
+    @user.editor?
   end
 
   def edit?
-    user.editor? or not post.published?
+    @user.editor? || @user.owner_of?(@post)
   end
 
   def destroy?
-    user.editor or user.author?
+    @user.editor? || @user.owner_of?(@post)
   end
 
   def permitted_attributes
-    if user.admin? || user.owner_of?(post)
+    if @user.editor? || @user.owner_of?(@post)
       [:title, :body, :tag_list]
     else
       [:tag_list]

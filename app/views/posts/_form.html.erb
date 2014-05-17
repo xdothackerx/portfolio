@@ -1,6 +1,6 @@
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
-    <div id="error_explanation" class="alert-box alert radius">
+    <div id="error_explanation" class="alert-box alert radius" align="center">
       <h5><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h5>
 
       <ul>
