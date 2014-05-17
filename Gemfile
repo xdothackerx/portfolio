@@ -10,6 +10,10 @@ gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 gem 'foundation-rails'
 gem 'minitest-rails'
 gem 'devise'
+gem 'pundit'
+gem 'launchy'
+gem 'better_errors'
+gem 'binding_of_caller'
 
 group :production do
   gem 'rails_12factor'

@@ -15,7 +15,6 @@ feature "As the site owner, I want to restrict who can access the site so that m
     # Given a visit to the main page
     visit new_user_session_path
     sign_in
-    puts page.body
     # When the user clicks on the log in button and then logs out
     find_by_id("logout")
     # Then the session should be ended

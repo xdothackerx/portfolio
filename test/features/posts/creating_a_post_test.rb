@@ -5,7 +5,6 @@ feature "CreatingAPost" do
     # Given an authorized user completes a new post form
     visit new_user_session_path
     sign_in
-    puts page.body
     visit new_post_path
     fill_in "Title", with: posts(:cr).title
     fill_in "Title", with: posts(:cr).body
