@@ -3,8 +3,7 @@ require 'test_helper'
 feature "Visitor" do
   scenario "As a site visitor I want to view (read) posts so I can enjoy quality content" do
     visit posts_path
-    save_and_open_page
-    page.must_have_content "Blog Posts"
+    page.text.must_include "Things I Have to Say"
     title = posts(:cr).title
     page.find('tr', :text => title).click_on "Show"
     page.must_have_content posts(:cr).body
@@ -12,7 +11,7 @@ feature "Visitor" do
 
   scenario "As a site visitor I should not be able to visit new_post_path" do
     visit new_post_path
-    page.must_have_content "You need to sign in or sign up to continue."
+    page.must_have_content "Log In"
   end
 
   scenario "As a site visitor I should not be able to delete, update, or create posts so that I can't modify content I don't own" do

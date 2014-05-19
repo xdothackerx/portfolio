@@ -12,4 +12,10 @@ class User < ActiveRecord::Base
   def editor?
     role == 'editor'
   end
+
+  def visitor?
+    if role == nil
+      role = 'visitor'
+    end
+  end
 end

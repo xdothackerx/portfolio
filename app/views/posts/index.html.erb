@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Listing Posts</h1>
+  <h1>Things I Have to Say</h1>
 
   <table>
     <thead>
@@ -11,22 +11,22 @@
     </thead>
     <tbody>
       <% @posts.each do |post| %>
-      <tr id="<%= dom_id(post) %>">
-        <td><%= post.title %></td>
-        <td><%= link_to 'Show', post %></td>
-        <% if policy(post).update? && current_user != nil %>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <% end %>
-        <% if policy(post).destroy? && current_user != nil %>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-        <% if policy(post).destroy? && current_user != nil %>
-        <td><%= link_to 'New Post', new_post_path, id: "newpost" %></td>
-        <% end %>
-      </tr>
+          <tr id="<%= dom_id(post) %>">
+            <td><%= post.title %></td>
+            <td><%= link_to 'Show', post %></td>
+            <% if policy(post).edit? %>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <% end %>
+            <% if policy(post).destroy? %>
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          </tr>
       <% end %>
     </tbody>
   </table>
 
   <br />
+  <% if current_user != nil %>
+  <p><%= link_to 'New Post', new_post_path, id: "newpost" %></p>
+  <% end %>
 </div>
