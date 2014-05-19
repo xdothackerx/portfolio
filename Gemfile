@@ -26,6 +26,7 @@ end
 
 group :test do
 gem 'minitest-rails-capybara'
+gem 'simplecov', '~> 0.7.1', :require => false
 end
 
 
