@@ -16,7 +16,7 @@ Current login page:
 ![Login](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/login.png)
 
 Current blog post index:
-![Index](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/blog_index.png)
+![Index](https://raw.githubusercontent.com/xdothackerx/portfolio/Day13/public/img/blog_index.png)
 
 Curent blog post display:
-![Posts](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/blog_post.png)
+![Posts](https://raw.githubusercontent.com/xdothackerx/portfolio/Day13/public/img/blog_post.png)
