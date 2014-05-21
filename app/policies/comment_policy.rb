@@ -10,31 +10,27 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def initialize(user, comment)
-    if user.nil?
-      @user = User.new(:role => 'visitor')
-    else
-      @user = user
-    end
+    @user = user
     @comment = comment
   end
 
   def create?
-    true
+    @user
   end
 
   def publish?
-    @user.editor?
+    @user && @user.editor?
   end
 
   def modify?
-    @user.editor? || @user == @comment.author
+    @user && @user.editor? || @user && @user == @comment.author
   end
 
   def permitted_attributes
-    if @user.editor? || @user.owner_of?(@comment)
-      [:title, :body, :tag_list]
+    if @user && @user.editor? || @user && @user.owner_of?(@comment)
+      [:content, :post_id, :author_email, :tag_list, :approved]
     else
-      [:tag_list]
+      [:content, :post_id, :author_email, :tag_list]
     end
   end
 end

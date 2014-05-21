@@ -11,6 +11,9 @@ feature "As an author or editor I want to approve comments before they're posted
     page.text.must_include "testing testing 123"
     fill_in "comment_content", :with => "trololololol"
     click_on "Create Comment"
+    click_on "Log Out"
+    visit posts_path
+    click_on posts(:author).title
     page.text.wont_include "trololololol"
   end
 

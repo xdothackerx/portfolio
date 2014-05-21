@@ -15,7 +15,7 @@ class PostPolicy < ApplicationPolicy
     else
       @user = user
     end
-    @post = post
+      @post = post
   end
 
   def create?

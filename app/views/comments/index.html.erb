@@ -14,13 +14,15 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.author_email %></td>
+        <td><%= comment.author %></td>
         <td><%= comment.content %></td>
         <td><%= comment.approved %></td>
         <td><%= comment.post.title %></td>
         <td><%= link_to 'Show', post_comment_path(@post, comment) %></td>
+        <% if policy(comment).modify? %>
         <td><%= link_to 'Edit', edit_post_comment_path(@post, comment) %></td>
         <td><%= link_to 'Destroy', [@post, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
