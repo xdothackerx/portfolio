@@ -5,7 +5,7 @@ feature "Visitor" do
     visit posts_path
     page.text.must_include "Things I Have to Say"
     title = posts(:cr).title
-    page.find('tr', :text => title).click_on "Show"
+    click_on title
     page.must_have_content posts(:cr).body
   end
 

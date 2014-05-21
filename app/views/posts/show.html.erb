@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="panel radius">
+  <div class="panel callout radius">
     <h3>
       <strong><%= @post.title %></strong><br />
     </h3>
@@ -29,4 +29,16 @@
     <%= link_to 'Edit', edit_post_path(@post) %> |
     <%= link_to 'Back', posts_path %>
   </div>
+  <%= render 'comments/form' %>
+
+  <h5><strong>Waddaya Say?</strong></h5>
+  <div class="panel radius">
+    <% @post.comments.each do |comment| %>
+      <% if comment.approved? || policy(comment).modify? %>
+        <%= comment.author_email %>
+        <blockquote><%= comment.content %></blockquote>
+      <% end %>
+    <% end %>
+  </div>
+<%= link_to 'All Comments', post_comments_path(@post) %>
 </div>

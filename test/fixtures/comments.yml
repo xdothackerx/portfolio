@@ -1,22 +1,22 @@
 # Read about fixtures at
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  author: MyString
+person:
+  author: person@whatever.com
   author_url: MyString
   author_email: MyString
   user_ip: MyString
   user_agent: MyString
   referrer: MyString
-  content: MyText
-  approved: false
+  content: blahblahblah
+  approved: true
 
-two:
-  author: MyString
+troll:
+  author: troll@somewhere.com
   author_url: MyString
   author_email: MyString
   user_ip: MyString
   user_agent: MyString
   referrer: MyString
-  content: MyText
+  content: trolololol
   approved: false
