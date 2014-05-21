@@ -3,7 +3,7 @@ require 'test_helper'
 feature "Visitor" do
   scenario "As a site visitor I want to view (read) posts so I can enjoy quality content" do
     visit posts_path
-    page.text.must_include "Things I Have to Say"
+    page.text.must_include "Things I Say"
     title = posts(:cr).title
     click_on title
     page.must_have_content posts(:cr).body

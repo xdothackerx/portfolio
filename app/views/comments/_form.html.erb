@@ -18,7 +18,7 @@
         <%= f.text_area :content %>
       </div>
 
-      <% if current_user && current_user.role == "editor" %>
+      <% if current_user.role == "author" || current_user.role == "editor" %>
         <div class="row">
           <div class="small-3 small-centered columns">
             <div class="field" align="center">

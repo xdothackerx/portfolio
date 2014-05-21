@@ -17,9 +17,16 @@ feature "As an author or editor I want to approve comments before they're posted
     page.text.wont_include "trololololol"
   end
 
-  scenario "editors and authors can approve comments" do
-  end
-
-  scenario "comments need to have author, author_url, author_email, user_ip, user_agent, referrer, content:text, approved:boolean" do
+  scenario "authors can also approve comments" do
+    sign_in(:Author)
+    visit posts_path
+    click_on posts(:author).title
+    fill_in "comment_content", :with => "testing"
+    check("approved")
+    click_on "Create Comment"
+    click_on "Log Out"
+    visit posts_path
+    click_on posts(:author).title
+    page.text.must_include "testing"
   end
 end

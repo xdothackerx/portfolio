@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Things I Have to Say</h1><br />
+  <h1>Things I Say</h1><br />
 
   <table>
     <tbody>
@@ -7,7 +7,8 @@
           <tr id="<%= dom_id(post) %>">
             <% if post.published? || policy(post).modify? %>
             <td><h3><%= link_to post.title, post %></h3></td>
-            <td><%= post.created_at.strftime("Posted on %m/%d/%Y at %I:%M%p") %></td>
+            <td><%= post.created_at.strftime("Posted on %m/%d/%Y at %I:%M%p") %> <br />
+                by <%= User.find(post.author_id).email %></td>
             <% end %>
             <% if current_user && post.published? || current_user && policy(post).modify? %>
             <td><%= link_to 'Edit', edit_post_path(post) %></td>

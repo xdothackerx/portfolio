@@ -23,14 +23,14 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def modify?
-    @user && @user.editor? || @user && @user == @comment.author
+    @user && @user.editor? || @user && @user == @comment.author || @user && @user.id == Post.find(@comment.post_id).author_id
   end
 
   def permitted_attributes
-    if @user && @user.editor? || @user && @user.owner_of?(@comment)
-      [:content, :post_id, :author_email, :tag_list, :approved]
+    if @user && @user.editor? || @user && @user.author?
+      [:content, :post_id, :author, :tag_list, :approved]
     else
-      [:content, :post_id, :author_email, :tag_list]
+      [:content, :post_id, :author, :tag_list]
     end
   end
 end

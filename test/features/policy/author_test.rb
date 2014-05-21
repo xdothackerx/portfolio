@@ -4,7 +4,6 @@ feature "Authorship" do
   scenario "As an author I want to create posts so that I can share great content with the world" do
     sign_in(:Author)
     click_on "Blog"
-    save_and_open_page
     click_on "New Post"
     page.wont_have_field("published")
   end
