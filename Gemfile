@@ -14,6 +14,8 @@ gem 'devise'
 gem 'pundit'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'omniauth-twitter'
+gem 'figaro'
 
 group :production do
   gem 'rails_12factor'
