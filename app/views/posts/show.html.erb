@@ -35,13 +35,16 @@
   <% end %>
 
   <h5><strong>Waddaya Say?</strong></h5>
-  <div class="panel radius">
-    <% @post.comments.each do |comment| %>
-      <% if comment.approved? || policy(comment).modify? %>
-        <%= comment.author %>
+  <% @post.comments.each do |comment| %>
+    <% if comment.id != nil && comment.approved? || comment.id != nil && policy(comment).modify? %>
+      <div class="panel radius">
+        <% if policy(comment).modify? %>
+          <%= render 'comments/approved' %>
+        <% end %>
+        <%= link_to comment.author, post_comment_url(@post, comment) %>
         <blockquote><%= comment.content %></blockquote>
-      <% end %>
+      </div>
     <% end %>
-  </div>
-<%= link_to 'All Comments', post_comments_path(@post) %>
+  <% end %>
+  <%= link_to 'All Comments', post_comments_path(@post) %>
 </div>
