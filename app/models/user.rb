@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   def visitor?
     if role == nil
       role = 'visitor'
+      @user.save
     end
   end
 

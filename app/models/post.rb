@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   validates_length_of :body, :minimum => 2
   has_many :comments
   accepts_nested_attributes_for :comments
-  before_destroy :to_log
+  # before_destroy :to_log
 
   def publish!
     published = true
