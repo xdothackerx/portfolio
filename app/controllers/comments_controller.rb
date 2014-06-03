@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
   # GET /comments/1.json
   def show
     @comment = Comment.find(params[:id])
-    @comments = @post.comments.find(params[:id])
+    @comments = @commentable.comments.find(params[:id])
   end
 
   # GET /comments/new
@@ -50,7 +50,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to post_comments_path, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @commentable, notice: 'Comment was successfully updated.' }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -62,9 +62,9 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    @comment = @post.comments.destroy(params[:id])
+    @comment = @commentable.comments.destroy(params[:id])
     respond_to do |format|
-      format.html { redirect_to post_comments_path(@post), notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to @commentable, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

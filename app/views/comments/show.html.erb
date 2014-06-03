@@ -12,7 +12,7 @@
 
 <p>
   <strong>On Post:</strong>
-  <%= @comment.post.title %>
+  <%= @comment.commentable.title %>
 </p>
 
 <% if policy(Comment).modify? %>
@@ -22,5 +22,5 @@
 </p>
 <% end %>
 
-<%= link_to 'Edit', :back %> |
-<%= link_to 'Back', post_comments_path %>
+<%= link_to 'Edit', :back %> | <%= link_to 'Destroy', [@commentable, @comment], method: :delete, data: { confirm: 'Are you sure?' } %><br><br>
+<%= link_to 'Back', @commentable %>

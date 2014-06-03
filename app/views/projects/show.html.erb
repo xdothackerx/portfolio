@@ -1,16 +1,40 @@
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+<div class="row">
+  <div class="panel callout radius">
+    <h3>
+      <strong><%= @project.title %></strong><br />
+    </h3>
 
-<p>
-  <strong>Tech:</strong>
-  <%= @project.tech %>
-</p>
+    <div class="large-block-grid-4">
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+    <h4 id="tech">
+      <small>
+        <b>Tech:</b>
+        <%= @project.tech %>
+      </small>
+    </h4>
 
-<%= link_to 'Back', projects_path %>
+    <p id="description">
+      <b>Description:</b>
+      <%= @project.description %>
+    </p>
+
+    <%= link_to 'Edit', edit_project_path(@project) %> |
+    <%= link_to 'Back', projects_path %>
+  </div>
+
+  <% if current_user %>
+  <%= render 'comments/form' %>
+  <% end %>
+
+  <h5><strong>Waddaya Say?</strong></h5>
+  <% @project.comments.each do |comment| %>
+    <% if comment.id != nil && comment.approved? || comment.id != nil && policy(comment).modify? %>
+      <div class="panel radius">
+        <%= link_to comment.author, project_comment_url(@project, comment) %>
+        <blockquote><%= comment.content %></blockquote>
+      </div>
+    <% end %>
+  <% end %>
+  <%= link_to 'All Comments', project_comments_path(@project) %>
+</div>

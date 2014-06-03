@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_commentable, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /posts
@@ -11,7 +11,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comment = @commentable.comments.build
+    @commentable = @post
+    @comment = @post.comments.build
   end
 
   # GET /posts/new
@@ -66,10 +67,9 @@ class PostsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_commentable
-    @resource, id = request.path.split('/')[1,2]
-    @commentable = @resource.singularize.classify.constantize.find(id)
-  end
+    def set_post
+      @post = Post.find(params[:id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params

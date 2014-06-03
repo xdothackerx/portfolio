@@ -12,51 +12,16 @@
   </head>
 
   <body>
-    <div class="fixed">
-      <nav class="top-bar" data-topbar>
-        <ul class="title-area">
-          <li class="name">
-            <%= link_to image_tag('http://www.adobe.com/content/dam/Adobe/images/shared/product_mnemonics/48x48/kuler-48x48.png'), root_path %></a>
-          </li>
-        </ul>
-        <section class="top-bar-section">
-          <ul class="right">
-            <li class="divider"></li>
-            <li><%= link_to "Code", projects_path %></a></li>
-            <li class="divider"></li>
-            <li><%= link_to "Art", projects_path %></a></li>
-            <li class="divider"></li>
-            <li><%= link_to "Blog", posts_path %></a></li>
-          </ul>
-          <div id="user_nav">
-            <ul class="right">
-              <% if current_user %>
-                <li class="has-form">
-                  <a href=<%= destroy_user_session_path %> class="button [bit radius]" id="logout">Log Out</a>
-                </li>
-              <% else %>
-                <li class="has-form">
-                  <a href=<%= new_user_session_path %> class="button [big radius]" id="login">Log In</a>
-                </li>
-                <li class="has-form">
-                  <a href=<%= new_user_registration_path %> class="button [big radius]" id="register">Register</a>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <%= render '/layouts/nav' %>
+  <!-- Flash Notice -->
+  <% if flash[:notice] %>
+    <div class="alert-box success radius" align="center">
+      <%= flash[:notice] %>
     </div>
-  </br>
-    <!-- Flash Notice -->
-    <% if flash[:notice] %>
-      <div class="alert-box success radius" align="center">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
+  <% end %>
 
-
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+  <div style="height: 3em"></div>
+  <%= yield %>
+  <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -21,6 +21,8 @@ before_action :set_project, only: [:show, :edit, :update, :destroy]
   end
 
   def show
+    @commentable = @project
+    @comment = @project.comments.build
   end
 
   def edit
