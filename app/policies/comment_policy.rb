@@ -32,9 +32,9 @@ class CommentPolicy < ApplicationPolicy
 
   def permitted_attributes
     if @user.editor? || @user.author?
-      [:content, :post_id, :author, :tag_list, :approved]
+      [:content, :commentable_id, :author, :tag_list, :approved]
     else
-      [:content, :post_id, :author, :tag_list]
+      [:content, :commentable_id, :author, :tag_list]
     end
   end
 end

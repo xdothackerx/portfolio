@@ -38,9 +38,6 @@
   <% @post.comments.each do |comment| %>
     <% if comment.id != nil && comment.approved? || comment.id != nil && policy(comment).modify? %>
       <div class="panel radius">
-        <% if policy(comment).modify? %>
-          <%= render 'comments/approved' %>
-        <% end %>
         <%= link_to comment.author, post_comment_url(@post, comment) %>
         <blockquote><%= comment.content %></blockquote>
       </div>

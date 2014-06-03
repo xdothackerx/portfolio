@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   end
   resources :projects
 
-  get 'home/index'
   devise_scope :user do
     get '/users/sign_out(.:format)' => 'devise/sessions#destroy'
   end

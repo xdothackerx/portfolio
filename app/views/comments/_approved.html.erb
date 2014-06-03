@@ -1,8 +1,0 @@
-<%= form_for([@post, @comment], url: edit_post_comment_path, method: :patch) do |f| %>
-  <% if current_user.role == "author" || current_user.role == "editor" %>
-    <div class="small-8 small-offset-10 columns" >
-      <%= f.label :approved, class: "left inline", title: "Is this comment approved?" %><%= f.check_box :approved, class: "inline", :id => "approved" %>
-      <%= f.submit "Update", class: "inline" %>
-    </div>
-  <% end %>
-<% end %>

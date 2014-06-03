@@ -4,9 +4,9 @@ feature "Visitor" do
   scenario "As a site visitor I want to view (read) posts so I can enjoy quality content" do
     visit posts_path
     page.text.must_include "Things I Say"
-    title = posts(:cr).title
+    title = posts(:cf).title
     click_on title
-    page.must_have_content posts(:cr).body
+    page.must_have_content posts(:cf).body
   end
 
   scenario "As a site visitor I should not be able to visit new_post_path" do
@@ -22,5 +22,7 @@ feature "Visitor" do
   end
 
   scenario "As a site visitor I want to only see published posts so that I don't see crap drafts or unapproved content." do
+    visit posts_path
+    page.wont_have_content posts(:cr).title
   end
 end

@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-# before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  before_filter :load_post
+  before_filter :load_commentable
+
   # GET /comments
   # GET /comments.json
   def index
@@ -29,14 +29,15 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = @post.comments.build(comment_params)
+    @comment = @commentable.comments.new(comment_params)
     @comment.author = current_user.email
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to [@post], notice: 'Your comment has been submitted for approval.' }
+        format.html { redirect_to [@commentable], notice: 'Your comment has been submitted for approval.' }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :new }
+        instance_variable_set("@#{@resource.singularize}".to_sym, @commentable)
+        format.html { render template: "#{@resource}/show" }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -74,8 +75,9 @@ class CommentsController < ApplicationController
   #   @comment = comment.find(params[:id])
   # end
 
-  def load_post
-    @post = Post.find(params[:post_id])
+  def load_commentable
+    @resource, id = request.path.split('/')[1,2]
+    @commentable = @resource.singularize.classify.constantize.find(id)
   end
 
   # Never trust parameters from the scary internet, only allow the white post through.
