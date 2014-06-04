@@ -12,13 +12,11 @@
   </head>
 
   <body>
-  <%= render '/layouts/nav' %>
+  <%= render '/layouts/nav' %><br>
   <!-- Flash Notice -->
-  <% if flash[:notice] %>
-    <div class="alert-box success radius" align="center">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
+  <div class="flash-panel" id="flash_notice" align="center" style="margin-top: 1em">
+    <%= render "layouts/flash" %>
+  </div>
 
   <div style="height: 3em"></div>
   <%= yield %>

@@ -36,19 +36,41 @@
 // $row-width: rem-calc(1000);
 // $total-columns: 12;
 
+$purple: #97729B;
+$dark-purple: #3A173E;
+$light-purple: #DC87D6;
+$vivid-purple: #BD0FB1;
+$pastel-purple: #B19EB0;
+
+$green: #DC87D6;
+$dark-green: #DC87D6;
+$light-green: #DC87D6;
+$vivid-green: #01FE0C;
+$pastel-green: #D8F5CB;
+
+$cyan: #D8F5CB;
+$dark-cyan: #014F46;
+$light-cyan: #A5FEDE;
+$vivid-cyan: #00FFA3;
+$pastel-cyan: #E6FFF6;
+
+$gray: #7F7F7F;
+$dark-gray: #2A2A2A;
+$light-gray: #D9D9D9;
+
 // We use these as default colors throughout
- $primary-color: #27A295;
- $secondary-color: #4D3421;
- $alert-color: #F09384;
- $success-color: #43AC6A;
- $warning-color: #f08a24;
- $info-color: #a0d3e8;
+ $primary-color: $light-gray;
+ $secondary-color: $purple;
+ $alert-color: scale-color($vivid-purple, $lightness: 50%);
+ $success-color: scale-color($vivid-green, $lightness: 50%);
+ $warning-color: $vivid-cyan;
+ $info-color: $light-purple;
 
 // Global
 
 // We use these to control various global styles
- $body-bg: #E6D2AE;
- $body-font-color: #19558A;
+ $body-bg: scale-color($light-gray, $lightness: 75%);
+ $body-font-color: $dark-cyan;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -121,7 +143,7 @@
 // $header-font-family: $body-font-family;
 // $header-font-weight: normal;
 // $header-font-style: normal;
- $header-font-color: #062A4A;
+ $header-font-color: $dark-purple;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
  $header-bottom-margin: .5rem;
@@ -164,8 +186,8 @@
 
 // We use these to style anchors
 // $anchor-text-decoration: none;
-// $anchor-font-color: $primary-color;
-// $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
+$anchor-font-color: scale-color($dark-cyan, $lightness: 14%);
+$anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 // We use these to style the <hr> element
  $hr-border-width: 2px;
@@ -1172,7 +1194,7 @@
  $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-  $topbar-height: 50px;
+  $topbar-height: 2em;
   $topbar-margin-bottom: 0px;
 
 // Controlling the styles for the title in the top bar

@@ -14,13 +14,6 @@ class User < ActiveRecord::Base
     role == 'editor'
   end
 
-  def visitor?
-    if role == nil
-      role = 'visitor'
-      @user.save
-    end
-  end
-
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider

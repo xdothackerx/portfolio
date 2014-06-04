@@ -1,0 +1,46 @@
+$purple: #97729B;
+$dark-purple: #3A173E;
+$light-purple: #DC87D6;
+$vivid-purple: #FF6AF4;
+$pastel-purple: #B19EB0;
+
+$green: #DC87D6;
+$dark-green: #DC87D6;
+$light-green: #DC87D6;
+$vivid-green: #01FE0C;
+$pastel-green: #D8F5CB;
+
+$cyan: #D8F5CB;
+$dark-cyan: #014F46;
+$light-cyan: #A5FEDE;
+$vivid-cyan: #00FFA3;
+$pastel-cyan: #E6FFF6;
+
+$gray: #7F7F7F;
+$dark-gray: #2A2A2A;
+$light-gray: #D9D9D9;
+
+.green-box {
+  background-color: $vivid-green;
+}
+
+.cyan-box {
+  background-color: $vivid-cyan;
+}
+
+.purple-box {
+  background-color: $vivid-purple;
+}
+
+.gray-box {
+  background-color: $gray;
+}
+
+.login-button {
+  margin-top: .5em;
+  background-color: $dark-gray;
+  border-style: solid;
+  border-color: $vivid-cyan;
+  border-width: .125em;
+  height: 2.25em
+}
