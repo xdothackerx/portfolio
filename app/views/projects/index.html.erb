@@ -1,4 +1,4 @@
-<div align="center">
+<div class="row" align="center">
   <h1>Stuff I've Done</h1><br />
 
   <div class="large-block-grid-4">
@@ -6,9 +6,20 @@
       <li>
         <div class="project" id="<%= dom_id(project) %>">
           <h3><%= link_to project.title, project %></h3>
-          <strong>Tech used:</strong> <%= project.tech %><br />
-          <%= link_to image_tag('http://www.adobe.com/content/dam/Adobe/images/shared/product_mnemonics/48x48/kuler-48x48.png'), project_path(project) %>
-          <p><strong>Description:</strong> <%= project.description %></p>
+          <%= link_to image_tag('http://placehold.it/300x300'), project_path(project) %>
+          <div align="left">
+            <strong>Tech used:</strong>
+          </div>
+          <div align="justify">
+            <%= project.tech %>
+          </div>
+          <br />
+          <div align="left">
+            <strong>Description:</strong>
+          </div>
+          <div align="justify">
+            <%= project.description %>
+          </div>
           <div class="nav">
             <%= link_to 'Edit', edit_project_path(project) %> |
             <%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'} %>
@@ -19,3 +30,4 @@
   </div>
   <br />
   <%= link_to 'New Project', new_project_path %>
+</div>
