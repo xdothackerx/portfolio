@@ -1,11 +1,10 @@
-<h1>All Comments</h1>
+<div align="center"><h1>All Comments</h1>
 
 <table>
   <thead>
     <tr>
       <th>Author</th>
       <th>Content</th>
-      <th>Approved</th>
       <th>Post</th>
       <th colspan="3"></th>
     </tr>
@@ -14,14 +13,15 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.author %></td>
-        <td><%= comment.content %></td>
-        <td><%= comment.approved %></td>
-        <td><%= comment.post.title %></td>
-        <td><%= link_to 'Show', post_comment_path(@post, comment) %></td>
+        <% if comment.approved? || policy(comment).modify? %>
+          <td><%= comment.author %></td>
+          <td><%= comment.content %></td>
+          <td><%= comment.commentable.title %></td>
+          <td><%= link_to 'Show', "comments/#{comment.id}" %></td>
+        <% end %>
         <% if policy(comment).modify? %>
-        <td><%= link_to 'Edit', edit_post_comment_path(@post, comment) %></td>
-        <td><%= link_to 'Destroy', [@post, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', "edit_#{@commentable}_comment_path(@commentable, comment)" %></td>
+        <td><%= link_to 'Destroy', [@commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -30,4 +30,5 @@
 
 <br>
 
-<%= link_to 'Back to Posts Index', posts_path %> | <%= link_to 'Back to Post', post_path(@post) %>
+<%= link_to 'Back to Post', @commentable %>
+</div>

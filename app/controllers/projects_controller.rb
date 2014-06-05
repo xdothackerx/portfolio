@@ -56,6 +56,6 @@ before_action :set_project, only: [:show, :edit, :update, :destroy]
     end
 
     def project_params
-      params.require(:project).permit(:title, :tech, :description)
+      params.require(:project).permit(:title, :tech, :description, :image)
     end
 end

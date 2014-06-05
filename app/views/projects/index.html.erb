@@ -5,24 +5,33 @@
     <% @projects.each do |project| %>
       <li>
         <div class="project" id="<%= dom_id(project) %>">
-          <h3><%= link_to project.title, project %></h3>
-          <%= link_to image_tag('http://placehold.it/300x300'), project_path(project) %>
-          <div align="left">
-            <strong>Tech used:</strong>
-          </div>
-          <div align="justify">
-            <%= project.tech %>
-          </div>
-          <br />
-          <div align="left">
-            <strong>Description:</strong>
-          </div>
-          <div align="justify">
-            <%= project.description %>
-          </div>
-          <div class="nav">
-            <%= link_to 'Edit', edit_project_path(project) %> |
-            <%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'} %>
+          <div class="panel radius">
+            <h3><%= link_to project.title, project %></h3>
+            <div style="line-height: 12em; background-color: #7F7F7F">
+              <%= image_tag project.image_url(:thumb).to_s %><br>
+            </div>
+            <div class="callout-panel radius" style="height: 6em; margin: .5em; padding: .5em; padding-top: 0em">
+              <div align="left" style="margin: 0em; padding: 0em">
+                <h4 style="margin: 0em; padding: 0em"><small><b>Tech used:</b></small></h4>
+              </div>
+              <div align="justify">
+                <% project.tech.split(", ").each do |t| %>
+                <small><%= t %></br></small>
+                <% end %>
+              </div>
+            </div>
+            <div class="callout-panel radius" style="height: 6em; margin: .5em; padding: .5em; padding-top: 0em">
+               <div align="left" style="margin: 0em; padding: 0em">
+                <h4 style="margin: 0em; padding: 0em"><small><b>Description:</b></small></h4>
+              </div>
+              <div align="justify">
+                <small><%= project.description %></small>
+              </div>
+            </div>
+            <div class="nav">
+              <%= link_to 'Edit', edit_project_path(project) %> |
+              <%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'} %>
+            </div>
           </div>
         </div>
       </li>

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="panel callout radius">
+  <div class="panel radius">
     <h3>
       <strong><%= @project.title %></strong><br />
     </h3>
@@ -8,16 +8,18 @@
     </div>
 
     <h4 id="tech">
-      <small>
+      <small style="color: #3A173E">
         <b>Tech:</b>
         <%= @project.tech %>
       </small>
     </h4>
 
-    <p id="description">
+    <h4 id="description">
+      <small style="color: #3A173E">
       <b>Description:</b>
       <%= @project.description %>
-    </p>
+      </small>
+    </h4>
 
     <%= link_to 'Edit', edit_project_path(@project) %> |
     <%= link_to 'Back', projects_path %>
@@ -30,7 +32,7 @@
   <h5><strong>Waddaya Say?</strong></h5>
   <% @project.comments.each do |comment| %>
     <% if comment.id != nil && comment.approved? || comment.id != nil && policy(comment).modify? %>
-      <div class="panel radius">
+      <div class="callout-panel radius">
         <%= link_to comment.author, project_comment_url(@project, comment) %>
         <blockquote><%= comment.content %></blockquote>
       </div>

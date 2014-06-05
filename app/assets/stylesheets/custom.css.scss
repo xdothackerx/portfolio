@@ -2,13 +2,13 @@ $purple: #97729B;
 $dark-purple: #3A173E;
 $light-purple: #DC87D6;
 $vivid-purple: #FF6AF4;
-$pastel-purple: #B19EB0;
+$pastel-purple: #EFD5ED;
 
-$green: #DC87D6;
-$dark-green: #DC87D6;
-$light-green: #DC87D6;
+$green: #4FB254;
+$dark-green: #174900;
+$light-green: #A7FF80;
 $vivid-green: #01FE0C;
-$pastel-green: #D8F5CB;
+$pastel-green: #D9F6CC;
 
 $cyan: #D8F5CB;
 $dark-cyan: #014F46;
@@ -43,4 +43,11 @@ $light-gray: #D9D9D9;
   border-color: $vivid-cyan;
   border-width: .125em;
   height: 2.25em
+}
+
+.callout-panel {
+  @include panel(
+    $bg: scale-color($pastel-purple, $lightness: 50%),
+    $adjust:true
+  );
 }
