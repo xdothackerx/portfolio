@@ -18,21 +18,21 @@
         <ul class="right">
           <% if current_user %>
             <li class="has-form">
-              <a href=<%= destroy_user_session_path %> class="login-button" id="logout" style="padding-top: .25em; padding-left: .5em; padding-right: .5em">Log Out</a>
+              <a href=<%= destroy_user_session_path %> class="login-button" id="logout" style="padding-top: .25em; padding-right: 2em; font-size: .8em;">Log Out</a>
             </li>
           <% else %>
             <li class="has-form">
-              <a href=<%= new_user_session_path %> class="login-button" id="login" style="padding-top: .25em; padding-left: .5em; padding-right: .5em">Log In</a>
+              <a href=<%= new_user_session_path %> class="login-button" id="login" style="padding-top: .25em; padding-right: 2em; font-size: .8em;">Log In</a>
             </li>
             <li class="has-form">
-              <a href=<%= new_user_registration_path %> class="login-button" id="register" style="padding-top: .25em; padding-left: .5em; padding-right: .5em">Register</a>
+              <a href=<%= new_user_registration_path %> class="login-button" id="register" style="padding-top: .25em; padding-right: 2em; font-size: .8em;">Register</a>
             </li>
           <% end %>
         </ul>
       </div>
       <div style="height: 1.75em"></div>
       <div class="purple-box" style="height: .25em"></div>
-      <div class="cyan-box" style="height: .25em"></div>
+      <div class="cyan-box" style="height: .20em"></div>
       <div class="gray-box" style="height: 1em"></div>
       <div class="green-box" style="margin-top: .5em; height: .125em"></div>
     </section>

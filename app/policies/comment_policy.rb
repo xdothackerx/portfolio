@@ -30,6 +30,10 @@ class CommentPolicy < ApplicationPolicy
     @user.editor? || user == @comment.author || @user.id == Post.find(@comment.commentable_id).author_id
   end
 
+  def admin?
+    @user.editor? || @user.id == Post.find(@comment.commentable_id).author_id
+  end
+
   def permitted_attributes
     if @user.editor? || @user.author?
       [:content, :commentable_id, :author, :tag_list, :approved]

@@ -1,26 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @comment.author %>
-</p>
+<div class="row">
+  <div class="callout-panel radius">
+    <small>
+      <strong>Author:</strong>
+      <%= @comment.author %>
+      <br>
+      <strong>On Post:</strong>
+      <%= @comment.commentable.title %>
+    </small>
 
-<p>
-  <strong>Content:</strong>
-  <%= @comment.content %>
-</p>
+    <blockquote style="font-size: .8em">
+      <%= @comment.content %>
+    </blockquote>
 
-<p>
-  <strong>On Post:</strong>
-  <%= @comment.commentable.title %>
-</p>
-
-<% if policy(Comment).modify? %>
-<p>
-  <strong>Approved:</strong>
-  <%= @comment.approved %>
-</p>
+    <% if policy(@comment).admin? %>
+    <p>
+      <strong>Approved:</strong>
+      <%= @comment.approved %>
+    </p>
+    <% end %>
+  </div>
+</div>
+<% if policy(@comment).modify? %>
+  <%= link_to 'Edit', :back %> | <%= link_to 'Destroy', [@commentable, @comment], method: :delete, data: { confirm: 'Are you sure?' } %><br><br>
 <% end %>
-
-<%= link_to 'Edit', :back %> | <%= link_to 'Destroy', [@commentable, @comment], method: :delete, data: { confirm: 'Are you sure?' } %><br><br>
 <%= link_to 'Back', @commentable %>
+
