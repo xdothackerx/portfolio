@@ -31,7 +31,7 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def admin?
-    @user.editor? || @user.id == Post.find(@comment.commentable_id).author_id
+    @user.editor? || @user.author?
   end
 
   def permitted_attributes
