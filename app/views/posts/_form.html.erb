@@ -1,7 +1,7 @@
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <div id="error_explanation" class="alert-box alert radius" align="center">
+      <h5><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h5>
 
       <ul>
       <% @post.errors.full_messages.each do |message| %>
@@ -11,19 +11,35 @@
     </div>
   <% end %>
 
+<div class="row">
+  <div class="small-12 columns">
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :body %><br>
+    <%= f.label :body %><br />
     <%= f.text_area :body %>
   </div>
-  <div class="field">
+
+    <% if current_user.role == "editor" %>
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :published, class: "right inline", title: "Is this post published?", data: {tooltip: true} %><br>
+      </div>
+
+      <div class="small-9 columns">
+        <%= f.check_box :published, :id => "published" %>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- <div class="field">
     <%= f.label :published %><br>
     <%= f.check_box :published %>
-  </div>
-  <div class="actions">
+  </div> -->
+
+  <div class="actions" align="center">
     <%= f.submit %>
   </div>
 <% end %>

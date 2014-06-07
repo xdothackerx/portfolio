@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="row">
   <div class="panel radius">
     <h3>
@@ -14,6 +12,17 @@
       <small>
         <b>By:</b>
         <%= @post.author.email %>
+      </small>
+    </h4>
+
+    <h4 id="status">
+      <small>
+        <b>Status:</b>
+          <% if @post.published? %>
+            Published
+          <% else %>
+            Not Published
+          <% end %>
       </small>
     </h4>
 
