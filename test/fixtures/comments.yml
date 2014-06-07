@@ -1,0 +1,22 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+person:
+  author: person@whatever.com
+  author_url: MyString
+  author_email: MyString
+  user_ip: MyString
+  user_agent: MyString
+  referrer: MyString
+  content: blahblahblah
+  approved: true
+
+troll:
+  author: troll@somewhere.com
+  author_url: MyString
+  author_email: MyString
+  user_ip: MyString
+  user_agent: MyString
+  referrer: MyString
+  content: trolololol
+  approved: false

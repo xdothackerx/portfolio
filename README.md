@@ -20,3 +20,4 @@ Current blog post index:
 
 Curent blog post display:
 ![Posts](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/blog_post.png)
+

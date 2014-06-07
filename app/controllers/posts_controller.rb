@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comment = @post.comments.build
   end
 
   # GET /posts/new
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    authorize @post
     respond_to do |format|
       if @post.save
         current_user.posts << @post
@@ -71,6 +72,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :published)
+      params.require(:post).permit(:title, :body, (:published if current_user.role == "editor"))
     end
 end
