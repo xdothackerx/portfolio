@@ -192,7 +192,7 @@ $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 // We use these to style the <hr> element
  $hr-border-width: 2px;
 // $hr-border-style: solid;
- $hr-border-color: #C9B099;
+ $hr-border-color: $cyan;
  $hr-margin: rem-calc(20);
 
 // We use these to style lists

@@ -36,7 +36,7 @@
 
   <h5><strong>Waddaya Say?</strong></h5>
   <% @post.comments.each do |comment| %>
-    <% if comment.id != nil && comment.approved? || comment.id != nil && policy(comment).modify? %>
+    <% if comment.id && comment.approved? || comment.id != nil && policy(comment).modify? %>
       <div class="panel radius">
         <%= link_to comment.author, post_comment_url(@post, comment) %>
         <blockquote><%= comment.content %></blockquote>

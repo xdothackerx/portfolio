@@ -10,10 +10,4 @@ class Post < ActiveRecord::Base
     published = true
     save!
   end
-
-  # private
-
-  #   def to_log
-  #     Rails.logger.info()
-  #   end
 end
