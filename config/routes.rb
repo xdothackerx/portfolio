@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     get '/users/sign_out(.:format)' => 'devise/sessions#destroy'
   end
 
+  get "/contact" => "home#contact"
+  post "/contact" => "home#message"
+
+  get "/art" => "home#art"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
