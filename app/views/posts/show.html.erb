@@ -1,31 +1,28 @@
+<%= render 'comments/flash' %>
 <div class="row">
   <div class="panel callout radius">
     <h3>
-      <strong><%= @post.title %></strong><br />
+      <%= @post.title %><br />
     </h3>
 
     <p>
       <%= @post.body %>
     </p>
 
-    <h4 id="author">
-      <small>
+    <div id="author" style="font-size: 80%; color: #3A173E;">
         <b>By:</b>
         <%= @post.author.email %>
-      </small>
-    </h4>
+    </div>
 
-    <h4 id="status">
-      <small>
+    <% if policy(@post).modify? %>
+    <div id="status" style="font-size: 80%; color: #3A173E;">
         <b>Status:</b>
           <% if @post.published? %>
             Published
           <% else %>
             Not Published
           <% end %>
-      </small>
-    </h4>
-    <% if policy(@post).modify? %>
+    </div><br>
       <%= link_to 'Edit', edit_post_path(@post) %>
     <% end %>
   </div>
@@ -34,7 +31,7 @@
   <%= render 'comments/form' %>
   <% end %>
 
-  <h5><strong>Waddaya Say?</strong></h5>
+  <h5>Waddaya Say?</h5>
   <% @post.comments.each do |comment| %>
     <% if comment.id && comment.approved? || comment.id != nil && policy(comment).modify? %>
       <div class="panel radius">

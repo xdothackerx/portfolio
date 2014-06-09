@@ -36,6 +36,10 @@ $light-gray: #D9D9D9;
   background-color: $gray;
 }
 
+.top-bar-section .has-form {
+  height: 1.75em;
+}
+
 .login-button {
   margin-top: 1em;
   background-color: $dark-gray;
@@ -48,6 +52,9 @@ $light-gray: #D9D9D9;
 
 .login-button a {
   color: $light-gray;
+}
+.top-bar-section > ul > .divider {
+  height: 1.75em;
 }
 
 .callout-panel {
@@ -81,6 +88,7 @@ $light-gray: #D9D9D9;
   border-width: .25em;
   border-radius: 2px;
   font-size: .8em;
+  font-family: "homespun_tt_brkregular";
   color: $cyan;
   text-align: center;
   line-height: 1.5em;
@@ -93,4 +101,12 @@ $light-gray: #D9D9D9;
 
 .footer-box a:hover {
   color: $purple;
+}
+
+.panel.callout a:not(.button) {
+  color: $purple;
+}
+
+.panel.callout a:hover {
+  color: $dark-purple;
 }

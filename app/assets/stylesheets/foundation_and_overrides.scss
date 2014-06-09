@@ -7,7 +7,7 @@
 //
 
 // This is the default html and body font-size for the base rem value.
-// $rem-base: 16px;
+// $rem-base: $base-font-size;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
@@ -18,7 +18,7 @@
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
 // set $rem-base to $base-font-size and make sure $base-font-size is a px value.
-// $base-font-size: 100%;
+ $base-font-size: 14px;
 
 // The $base-line-height is 100% while $base-font-size is 150%
 // $base-line-height: 150%;
@@ -71,7 +71,7 @@ $light-gray: #D9D9D9;
 // We use these to control various global styles
  $body-bg: scale-color($light-gray, $lightness: 75%);
  $body-font-color: $dark-cyan;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+ $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -140,7 +140,7 @@ $light-gray: #D9D9D9;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: 'saucer_bbregular';
 // $header-font-weight: normal;
 // $header-font-style: normal;
  $header-font-color: $dark-purple;
@@ -1195,7 +1195,7 @@ $panel-font-color: $dark-purple;
 
 // Height and margin
   $topbar-height: 2em;
-  $topbar-margin-bottom: 0px;
+//  $topbar-margin-bottom: 0px;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: normal;
@@ -1222,7 +1222,7 @@ $panel-font-color: $dark-purple;
  $topbar-link-bg-hover: scale-color($secondary-color, $lightness: -14%);
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
-// $topbar-link-font-family: $body-font-family;
+ $topbar-link-font-family: "homespun_tt_brkregular";
 // $topbar-link-text-transform: none;
  $topbar-link-padding: $topbar-height;
 

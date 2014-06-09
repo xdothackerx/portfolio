@@ -12,14 +12,12 @@
   </head>
 
   <body>
+
   <%= render '/layouts/nav' %><br>
-  <!-- Flash Notice -->
-  <div class="flash-panel" id="flash_notice" align="center" style="margin-top: 1em">
-    <%= render "layouts/flash" %>
-  </div>
 
   <div style="height: 3em"></div>
   <%= yield %>
   <%= javascript_include_tag "application" %>
+  <div style="height: 3em"></div>
   </body>
 </html>

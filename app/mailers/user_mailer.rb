@@ -4,7 +4,6 @@ class UserMailer < ActionMailer::Base
     @name = name
     @email = email
     @message = message
-    @admin = User.find(1)
-    mail(to: @admin.email, subject: "Someone contacted me from samcamus.com!")
+    mail(to: xdothackerx@gmail.com, subject: "Someone contacted me from samcamus.com!")
   end
 end

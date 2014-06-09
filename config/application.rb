@@ -22,5 +22,9 @@ module Portfolio2
     config.generators do |g|
         g.test_framework :minitest, spec: true
     end
+
+    config.assets.enabled = true
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   end
 end

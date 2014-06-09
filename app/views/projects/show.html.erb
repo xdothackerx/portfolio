@@ -1,35 +1,33 @@
 <div class="row">
   <div class="panel radius">
     <h3>
-      <strong><%= @project.title %></strong><br />
+      <%= @project.title %><br />
     </h3>
 
     <div class="large-block-grid-4">
     </div>
 
-    <h4 id="tech">
-      <small style="color: #3A173E">
-        <b>Tech:</b>
-        <%= @project.tech %>
-      </small>
-    </h4>
-    <%= image_tag @project.image_url.to_s %>
-    <h4 id="description">
-      <small style="color: #3A173E">
-      <b>Description:</b>
-      <%= @project.description %>
-      </small>
-    </h4>
+    <div id="tech" style="color: #3A173E">
+      <t style="font-family: 'saucer_bbregular'">Tech:</t> <%= @project.tech %>
+    </div><br>
 
-    <%= link_to 'Edit', edit_project_path(@project) %> |
-    <%= link_to 'Back', projects_path %>
+    <%= image_tag @project.image_url.to_s %><br><br>
+
+    <div id="tech" style="color: #3A173E">
+      <t style="font-family: 'saucer_bbregular'">Description:</t> <%= @project.description %>
+    </div><br>
+
+    <% if policy(@project).publish? %>
+      <%= link_to 'Edit', edit_project_path(@project) %>
+    <% end %>
   </div>
+  <%= link_to 'Back', projects_path %>
 
   <% if current_user %>
   <%= render 'comments/form' %>
   <% end %>
 
-  <h5><strong>Waddaya Say?</strong></h5>
+  <h5>Waddaya Say?</h5>
   <% @project.comments.each do |comment| %>
     <% if comment.id != nil && comment.approved? || comment.id != nil && policy(comment).modify? %>
       <div class="callout-panel radius">

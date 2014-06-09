@@ -9,7 +9,11 @@ class HomeController < ApplicationController
     name = params[:name]
     email = params[:email]
     message = params[:message]
-    UserMailer.contact(name, email, message).deliver
-    redirect_to root_path, notice: "Your email has been sent. Talk to you soon!"
+    if name.empty? || email.empty? || message.empty?
+      redirect_to "/contact", alert: "Something went wrong! Did you fill out all of the fields?"
+    else
+      UserMailer.contact(name, email, message).deliver
+      redirect_to root_path, notice: "Your email has been sent. Talk to you soon!"
+    end
   end
 end
