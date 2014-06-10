@@ -1,0 +1,14 @@
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert-box radius">
+        alert: "Something went wrong! Did you fill out all of the fields?"
+        <ul>
+          <% @contact.errors.full_messages.each do |msg| %>
+            <li><small>
+              <%= msg %>
+            </small></li>
+            <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>

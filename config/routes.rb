@@ -18,8 +18,8 @@ Rails.application.routes.draw do
     get '/users/sign_out(.:format)' => 'devise/sessions#destroy'
   end
 
-  get "/contact" => "home#contact"
-  post "/contact" => "home#message"
+  get "/contact" => "contact#contact"
+  post "/contact" => "contact#message"
 
   get "/art" => "home#art"
   # The priority is based upon order of creation: first created -> highest priority.
