@@ -5,7 +5,7 @@
     <% @projects.each do |project| %>
       <li>
         <div class="project" id="<%= dom_id(project) %>">
-          <div class="panel radius">
+          <div class="grad-panel radius">
             <h3><%= link_to project.title, project %></h3>
             <div style="line-height: 12em; background-color: #7F7F7F">
               <%= link_to image_tag(project.image_url(:thumb).to_s), project %><br>
