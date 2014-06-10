@@ -3,6 +3,7 @@ require "test_helper"
 feature "As the site owner, I want to delete a portfolio item so that I can keep the list focused on my best work" do
   scenario "deleting a project" do
     # Given an existing project
+    sign_in(:Editor)
     visit projects_path(projects(:portfolio))
     # When the delete button is clicked
     page.must_have_content projects(:portfolio).title

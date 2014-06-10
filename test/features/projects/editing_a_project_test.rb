@@ -3,6 +3,7 @@ require "test_helper"
 feature "As the site owner, I want to edit a portfolio item so that I can update new project details" do
   scenario "editing a project" do
     # Given an existing project
+    sign_in(:Editor)
     visit projects_path(projects(:portfolio))
     # When the edit button is clicked and new information is supplied
     find("a", :text => "Edit", match: :first).click
@@ -14,6 +15,7 @@ feature "As the site owner, I want to edit a portfolio item so that I can update
 
   scenario "incorrectly editing an existing project" do
     # Given an existing project
+    sign_in(:Editor)
     visit projects_path(projects(:portfolio))
     # When I submit invalid changes
     find("a", :text => "Edit", match: :first).click

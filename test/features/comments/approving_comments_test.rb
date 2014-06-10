@@ -60,6 +60,6 @@ feature "As the portfolio owner I want to be able to control comments about my p
         click_on projects(:portfolio).title
         fill_in "comment_content", :with => comments(:troll).content
         click_on "Create Comment"
-        page.text.must_include("Please log in or register first!")
+        page.text.must_include("Please log in or register first.")
     end
 end

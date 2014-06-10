@@ -27,9 +27,9 @@
     <% end %>
   </div>
   <%= link_to 'Back', posts_path %>
-  <% if current_user %>
+
   <%= render 'comments/form' %>
-  <% end %>
+
 
   <h5>Waddaya Say?</h5>
   <% @post.comments.each do |comment| %>

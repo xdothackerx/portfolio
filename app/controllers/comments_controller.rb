@@ -28,16 +28,20 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = @commentable.comments.new(comment_params)
-    @comment.author = current_user.email
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to [@commentable], notice: 'Your comment has been submitted for approval.' }
-        format.json { render :show, status: :created, location: @comment }
-      else
-        instance_variable_set("@#{@resource.singularize}".to_sym, @commentable)
-        format.html { render template: "#{@resource}/show" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+    if current_user
+      @comment.author = current_user.email
+      respond_to do |format|
+        if @comment.save
+          format.html { redirect_to [@commentable], notice: 'Your comment has been submitted for approval.' }
+          format.json { render :show, status: :created, location: @comment }
+        else
+          instance_variable_set("@#{@resource.singularize}".to_sym, @commentable)
+          format.html { render template: "#{@resource}/show" }
+          format.json { render json: @comment.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to "/users/sign_in", alert: "Please log in or register first. We want to know who to credit for the awesome comment!"
     end
   end
 
