@@ -1,0 +1,4 @@
+$('#new_link').hide()
+if ($('#new_project').length == 0) {
+  $('#new_link').after('<%= j(render "form") %>')
+}

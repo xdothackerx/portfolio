@@ -11,12 +11,14 @@ before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def create
     @project = Project.new(project_params)
-    if @project.save
-      flash[:notice] = "Project was successfully created."
-      redirect_to @project
-    else
-      flash[:notice] = "Invalid form submission. Please fill out the form."
-      render :new
+    respond_to do |format|
+      if @project.save
+        format.html { redirect_to @project, flash[:notice] = "Project was successfully created." }
+        format.js {}
+      else
+        format.html { render :new, flash[:notice] = "Invalid form submission. Please fill out the form." }
+        format.js {}
+      end
     end
   end
 
