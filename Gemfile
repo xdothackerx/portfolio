@@ -20,6 +20,7 @@ gem 'carrierwave'
 gem 'rmagick', require: "RMagick"
 gem 'fog', "~> 1.3.1"
 gem 'eefgilm'
+gem 'remotipart', '~> 1.2'
 
 group :production do
   gem 'rails_12factor'
