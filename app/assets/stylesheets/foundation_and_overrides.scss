@@ -18,7 +18,7 @@
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
 // set $rem-base to $base-font-size and make sure $base-font-size is a px value.
- $base-font-size: 14px;
+$base-font-size: 100%;
 
 // The $base-line-height is 100% while $base-font-size is 150%
 // $base-line-height: 150%;
@@ -61,7 +61,7 @@ $light-gray: #D9D9D9;
 // We use these as default colors throughout
  $primary-color: $light-gray;
  $secondary-color: $purple;
- $alert-color: scale-color($vivid-purple, $lightness: 50%);
+ $alert-color: scale-color($light-purple, $lightness: 50%);
  $success-color: scale-color($vivid-green, $lightness: 50%);
  $warning-color: $vivid-cyan;
  $info-color: $light-purple;

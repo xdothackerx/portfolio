@@ -20,3 +20,5 @@ Current blog post index:
 
 Curent blog post display:
 ![Posts](https://raw.githubusercontent.com/xdothackerx/portfolio/Day13/public/img/blog_post.png)
+
+<!-- *Look into isotope -->
