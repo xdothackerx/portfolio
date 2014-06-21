@@ -11,8 +11,7 @@ class PostPolicy < ApplicationPolicy
 
   def initialize(user, post)
     if user.nil?
-      @user = User.new
-      @user.role = 'visitor'
+      @user = User.new(:role => 'visitor')
     else
       @user = user
     end
