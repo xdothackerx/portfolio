@@ -1,15 +1,15 @@
 <%= form_for(@contact, :url => "/contact") do |f| %>
   <div class="row">
     <div class="small-12 columns">
-      <%= f.label(:name) %>
+      <%= f.label("#{:name}*") %>
       <%= f.text_field(:name) %>
 
-      <%= f.label(:email) %>
+      <%= f.label("#{:email}*") %>
       <%= f.email_field(:email) %>
 
-      <%= f.label(:message) %>
+      <%= f.label("#{:message}*") %>
       <%= f.text_area(:message) %>
-
+      <%= f.label("* required") %>
       <div align="center">
         <%= f.submit "Send Email" %>
       </div>
