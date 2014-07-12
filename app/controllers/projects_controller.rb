@@ -32,13 +32,14 @@ before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def update
     respond_to do |format|
-
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to(@project, notice: 'Project was successfully updated.') }
         format.json { render :show, status: :ok, location: @project }
+        format.js {}
       else
         format.html { render :edit }
         format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
