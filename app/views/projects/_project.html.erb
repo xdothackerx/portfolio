@@ -1,6 +1,6 @@
 <li>
   <div class="project" id="<%= dom_id(project) %>">
-    <div class="grad-panel radius">
+    <div class="grad-panel radius" style="<%= 'height: 14em' if policy(project).publish? == false %>">
       <h3><%= link_to project.title, project %></h3>
       <div class="small-6 columns">
         <div style="line-height: 10.5em; background-color: #7F7F7F">
@@ -27,9 +27,9 @@
       </div>
       <div class="nav">
         <% if policy(project).publish? %>
-          <%= link_to 'Edit', edit_project_path(project) %> |
-          <%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'} %>
-          <% end %>
+          <p><%= link_to 'Edit', edit_project_path(project) %> |
+          <%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'} %></p>
+        <% end %>
       </div>
     </div>
   </div>
