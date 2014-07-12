@@ -2,23 +2,27 @@
   <div class="project" id="<%= dom_id(project) %>">
     <div class="grad-panel radius">
       <h3><%= link_to project.title, project %></h3>
-      <div style="line-height: 12em; background-color: #7F7F7F">
-        <%= link_to image_tag(project.image_url(:thumb).to_s), project %><br>
+      <div class="small-6 columns">
+        <div style="line-height: 10.5em; background-color: #7F7F7F">
+          <%= link_to image_tag(project.image_url(:thumb).to_s), project %><br>
+        </div>
       </div>
-      <div class="callout-panel radius" style="height: 12em; margin: .5em; padding: .5em">
-        <div align="left">
-          <h6 style="margin-bottom: 0em">Tech used:</h6>
-        </div>
-        <div align="justify">
-          <% project.tech.split(", ").each do |t| %>
-          <small><%= t %></br></small>
-          <% end %>
-        </div>
-        <div align="left">
-          <h6 style="margin-bottom: 0em; margin-top: .25em">Description:</h6>
-        </div>
-        <div align="justify">
-          <small><%= project.description %></small>
+      <div class="small-6 columns">
+        <div class="callout-panel radius" style="height: 10.5em">
+          <div align="left">
+            <h6 style="margin-bottom: 0em">Tech used:</h6>
+          </div>
+          <div align="justify">
+            <% project.tech.split(", ").each do |t| %>
+            <small><%= t %></br></small>
+            <% end %>
+          </div>
+          <div align="left">
+            <h6 style="margin-bottom: 0em; margin-top: .25em">Description:</h6>
+          </div>
+          <div align="justify">
+            <small><%= project.description %></small>
+          </div>
         </div>
       </div>
       <div class="nav">
