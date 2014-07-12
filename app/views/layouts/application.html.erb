@@ -16,7 +16,9 @@
   <%= render '/layouts/nav' %><br>
 
   <div style="height: 3em"></div>
-  <%= yield %>
+  <div class="content">
+    <%= yield %>
+  </div>
   <%= javascript_include_tag "application" %>
   <div style="height: 3em"></div>
   </body>

@@ -20,6 +20,14 @@ $gray: #7F7F7F;
 $dark-gray: #2A2A2A;
 $light-gray: #D9D9D9;
 
+.content {
+  font-size: 150%
+}
+
+.nav {
+  font-size: 100%
+}
+
 .green-box {
   background-color: $vivid-green;
 }
@@ -70,6 +78,10 @@ $light-gray: #D9D9D9;
   background: -o-linear-gradient($pastel-cyan, $pastel-purple); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient($pastel-cyan, $pastel-purple); /* For Firefox 3.6 to 15 */
   background: linear-gradient($pastel-cyan, $pastel-purple); /* Standard syntax */
+}
+
+.grad-panel h6 {
+  color: $dark-cyan;
 }
 
 .bottom-bar {
