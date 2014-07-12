@@ -37,6 +37,12 @@
       <div class="panel radius">
         <%= link_to comment.author, post_comment_url(@post, comment) %>
         <blockquote><%= comment.content %></blockquote>
+        <% if policy(comment).modify? %>
+          <p>
+            <strong>Approved:</strong>
+            <%= comment.approved %>
+          </p>
+        <% end %>
       </div>
     <% end %>
   <% end %>
