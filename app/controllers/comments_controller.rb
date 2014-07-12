@@ -48,7 +48,7 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update
-    @comment = @post.comments.update(params[:id], comment_params)
+    @comment = @commentable.comments.update(params[:id], comment_params)
 
     respond_to do |format|
       if @comment.update(comment_params)
