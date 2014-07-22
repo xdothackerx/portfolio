@@ -13,8 +13,8 @@ Current code portfolio page:
 ![CodeIndex](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/codeindex.png)
 
 Current blog post index:
-![Index](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/blog_index.png)
+![Index](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/blogindex.png)
 
 Curent blog post display:
-![Posts](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/blog_post.png)
+![Posts](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/blogpost.png)
 <!-- *Look into isotope -->
