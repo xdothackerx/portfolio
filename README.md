@@ -1,19 +1,16 @@
 <h4>Author: Sam Camus (xdothackerx)</h4>
 
-This app will help put together my portfolio site/blog. Work in progress!
+This app is the basis for my personal portfolio website. Work in progress!
 
-
+Languages/technologies used include Ruby, Rails, HTML/CSS/SCSS, JQuery, Foundation, Pundit, O-Auth, and Carrierwave
 
 <h5>PREVIEW SCREENSHOTS</h5>
 
 Current front page:
 ![HomePage](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/frontpage.png)
 
-Current registration page:
-![Registration](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/signup.png)
-
-Current login page:
-![Login](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/login.png)
+Current code portfolio page:
+![CodeIndex](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/codeindex.png)
 
 Current blog post index:
 ![Index](https://raw.githubusercontent.com/xdothackerx/portfolio/master/public/img/blog_index.png)
